@@ -1,0 +1,14 @@
+{
+    "name": "lextira/iam",
+    "description": "IAM Autorizations for Lextira Projects.",
+    "license": "MIT",
+    "require": {
+        "php" : "^7.0",
+        "laravel/framework": "^6.0"
+    },
+    "autoload": {
+        "psr-4" : {
+            "Lextira\\FormRequestSingleton\\" : "src/"
+        }
+    }
+}
