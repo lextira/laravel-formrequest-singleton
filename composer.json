@@ -1,0 +1,14 @@
+{
+    "name": "lextira/larvel-formrequest-singleton",
+    "description": "Use Laravel's excellent FormRequest as Singleton.",
+    "license": "MIT",
+    "require": {
+        "php" : "^7.0",
+        "laravel/framework": "^6.0"
+    },
+    "autoload": {
+        "psr-4" : {
+            "Lextira\\FormRequestSingleton\\" : "src/"
+        }
+    }
+}
