@@ -51,11 +51,11 @@ class FormRequestServiceProvider extends ServiceProvider
     {
         $request = FormRequest::createFrom($app['request'], $request);
 
+        $request->setContainer($app)->setRedirector($app->make(Redirector::class));
+
         if ($request instanceof ValidatesWhenResolved) {
             $request->validateResolved();
         }
-
-        $request->setContainer($app)->setRedirector($app->make(Redirector::class));
 
         $app->singleton(get_class($request), function(Application $app) use ($request) {
             return $request;
