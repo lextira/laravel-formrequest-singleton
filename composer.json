@@ -3,7 +3,7 @@
   "description": "Use Laravel's excellent FormRequest as Singleton.",
   "license": "MIT",
   "require": {
-    "php" : "^7.0",
+    "php" : "^7.0|^8.0",
     "laravel/framework": "^7.0|^8.0"
   },
   "autoload": {
