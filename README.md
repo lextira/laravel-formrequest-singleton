@@ -1,5 +1,5 @@
 # laravel-formrequest-singleton
-Use Laravel's excellent FormRequest as Singleton
+Use Laravel's excellent FormRequest as Scoped
 
 ## Installation
 
@@ -11,7 +11,7 @@ Use Laravel's excellent FormRequest as Singleton
 
 ## Usage
 
-All classes, which extend `Illuminate\Foundation\Http\FormRequest` are now instantiated as singleton.
+All classes, which extend `Illuminate\Foundation\Http\FormRequest` are now instantiated as scoped.
 
 This brings the following benefits:
 *   Changes done to the request by `prepareForValidation()` are applied only once,
