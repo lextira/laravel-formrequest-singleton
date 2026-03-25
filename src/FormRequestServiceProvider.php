@@ -35,19 +35,19 @@ class FormRequestServiceProvider extends ServiceProvider
                 return;
             }
 
-            // but if not, we resolve a new FromRequest and register it as singleton.
-            $this->resolveFormRequestAndRegisterAsSingleton($request, $app);
+            // but if not, we resolve a new FromRequest and register it as scoped.
+            $this->resolveFormRequestAndRegisterAsScoped($request, $app);
         });
     }
 
     /**
-     * Resolve a new FormRequest instance and bind it as singleton.
+     * Resolve a new FormRequest instance and bind it as scoped.
      *
      * @param \Illuminate\Http\Request $request
      * @param \Illuminate\Contracts\Foundation\Application $app
      * @throws
      */
-    protected function resolveFormRequestAndRegisterAsSingleton(Request $request, Application $app)
+    protected function resolveFormRequestAndRegisterAsScoped(Request $request, Application $app)
     {
         $request = FormRequest::createFrom($app['request'], $request);
 
@@ -57,7 +57,7 @@ class FormRequestServiceProvider extends ServiceProvider
             $request->validateResolved();
         }
 
-        $app->singleton(get_class($request), function(Application $app) use ($request) {
+        $app->scoped(get_class($request), function(Application $app) use ($request) {
             return $request;
         });
     }
